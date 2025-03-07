@@ -6,4 +6,4 @@ EXPOSE 95
 FROM base AS final
 WORKDIR /app
 COPY . .
-ENTRYPOINT ["dotnet", "VC_Auth.dll"]
+ENTRYPOINT ["dotnet", "VC_auth.dll"]
