@@ -6,4 +6,4 @@ EXPOSE 80
 FROM base AS final
 WORKDIR /app
 COPY . .
-ENTRYPOINT ["dotnet", "VC_Authentication.dll"]
+ENTRYPOINT ["dotnet", "VC_Auth.dll"]
