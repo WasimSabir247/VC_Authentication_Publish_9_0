@@ -11,4 +11,4 @@ ENV ASPNETCORE_URLS=http://+:80
 COPY . .
 
 # Run the application
-ENTRYPOINT ["dotnet", "VC_Authenticatio.dll"]
+ENTRYPOINT ["dotnet", "VC_Authentication.dll"]
