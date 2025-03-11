@@ -1,21 +1,14 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
+# Use the official ASP.NET 9.0 runtime
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
 EXPOSE 80
+EXPOSE 443
 
-#FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-#WORKDIR /src
-#COPY ["VC_Authenticatio.csproj", "."]
-#RUN dotnet restore "./VC_Authenticatio.csproj"
-#COPY . .
-#WORKDIR "/src/."
-#RUN dotnet build "VC_Authenticatio.csproj" -c Release -o /app/build
+# Set the environment variable to listen on the correct port
+ENV ASPNETCORE_URLS=http://+:80
 
-#FROM build AS publish
-#RUN dotnet publish "VC_Authenticatio.csproj" -c Release -o /app/publish /p:UseAppHost=false
-
-FROM base AS final
-WORKDIR /app
+# Copy prebuilt files from the repository (ensure you have the correct path)
 COPY . .
+
+# Run the application
 ENTRYPOINT ["dotnet", "VC_Authenticatio.dll"]
