@@ -6,16 +6,16 @@ EXPOSE 80
 
 #FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 #WORKDIR /src
-#COPY ["VC_Authentication.csproj", "."]
-#RUN dotnet restore "./VC_Authentication.csproj"
+#COPY ["VC_Authenticatio.csproj", "."]
+#RUN dotnet restore "./VC_Authenticatio.csproj"
 #COPY . .
 #WORKDIR "/src/."
-#RUN dotnet build "VC_Authentication.csproj" -c Release -o /app/build
+#RUN dotnet build "VC_Authenticatio.csproj" -c Release -o /app/build
 
 #FROM build AS publish
-#RUN dotnet publish "VC_Authentication.csproj" -c Release -o /app/publish /p:UseAppHost=false
+#RUN dotnet publish "VC_Authenticatio.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY . .
-ENTRYPOINT ["dotnet", "VC_Authentication.dll"]
+ENTRYPOINT ["dotnet", "VC_Authenticatio.dll"]
