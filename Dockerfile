@@ -2,8 +2,8 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
 WORKDIR /app
-EXPOSE 95
+EXPOSE 90
 FROM base AS final
 WORKDIR /app
 COPY . .
-ENTRYPOINT ["dotnet", "VC_Authentication.dll"]
+ENTRYPOINT ["dotnet", "VC_Auth.dll"]
