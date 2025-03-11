@@ -16,5 +16,5 @@ WORKDIR /app
 COPY --from=build /out ./
 
 # Expose the port and start the app
-EXPOSE 5000
+EXPOSE 80
 ENTRYPOINT ["dotnet", "VC_Auth.dll"]
